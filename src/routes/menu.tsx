@@ -45,7 +45,7 @@ function MenuPage() {
               Explore the flavours of authentic Chettinad and South Indian cuisine.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Prices are confirmed in the restaurant — [ADD ACTUAL MENU PRICES] once verified.
+              Prices are confirmed in the restaurant
             </p>
           </div>
         </div>
@@ -110,7 +110,7 @@ function MenuPage() {
           <SectionHeading
             eyebrow="Reservations"
             title="Book a Table at Manpaanai"
-            description={`Reserve through your preferred platform, or simply call ${restaurant.phoneDisplay}. Links below are placeholders to be replaced.`}
+            description={`Reserve through your preferred platform, or simply call ${restaurant.phoneDisplay}.`}
           />
         </Reveal>
         <Reveal delay={100} className="mx-auto mt-10 max-w-2xl">

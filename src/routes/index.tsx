@@ -100,10 +100,12 @@ function Home() {
           <div className="relative animate-reveal [animation-delay:180ms]">
             <ImagePlaceholder
               label="[HERO FOOD IMAGE]"
+              src="/image1.png"
               steam
               aspect="aspect-[4/5]"
               className="shadow-lift"
             />
+
             <div
               className="pointer-events-none absolute -bottom-5 -left-5 hidden h-32 w-32 rounded-full border border-primary/25 sm:block"
               aria-hidden="true"
@@ -123,7 +125,7 @@ function Home() {
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <ImagePlaceholder label="[TRADITIONAL COOKING IMAGE]" aspect="aspect-[5/4]" steam />
+            <ImagePlaceholder src="/image2.png" label="[TRADITIONAL COOKING IMAGE]" aspect="aspect-[5/4]" steam />
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading
@@ -232,9 +234,10 @@ function Home() {
             </div>
           </Reveal>
           <Reveal delay={100} className="grid grid-cols-2 gap-4">
-            <ImagePlaceholder label="[CHETTINAD DISH IMAGE]" aspect="aspect-[3/4]" steam />
+            <ImagePlaceholder src="/image3.png" label="" aspect="aspect-[3/4]" steam />
             <ImagePlaceholder
-              label="[SPICE GRINDING IMAGE]"
+            src="/image4.png"
+              label="[]"
               aspect="aspect-[3/4]"
               className="mt-8"
             />
@@ -251,7 +254,7 @@ function Home() {
           <SectionHeading
             eyebrow="The Experience"
             title="Dining at Manpaanai"
-            description="Photographs of the food, the flavours and the dining room will appear here."
+            description="Photographs of the food, the flavours and the dining room."
           />
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-4 sm:grid-rows-3">

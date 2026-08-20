@@ -6,6 +6,7 @@ interface ImagePlaceholderProps {
   /** Adds a gentle steam animation, for hot-food imagery slots. */
   steam?: boolean;
   aspect?: string;
+  src?: string;
 }
 
 /**
@@ -17,6 +18,7 @@ export function ImagePlaceholder({
   className,
   steam = false,
   aspect = "aspect-[4/3]",
+   src,
 }: ImagePlaceholderProps) {
   return (
     <div
@@ -28,6 +30,13 @@ export function ImagePlaceholder({
         className,
       )}
     >
+      {src && (
+  <img
+    src={src}
+    alt={label}
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+)}
       <div className="absolute inset-0 kolam-dots" aria-hidden="true" />
       <div
         className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_120%,var(--color-gold)/25,transparent_60%)] opacity-40"
@@ -53,7 +62,7 @@ export function ImagePlaceholder({
           {label}
         </span>
         <span className="text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
-          Photograph to be added
+          
         </span>
       </div>
     </div>

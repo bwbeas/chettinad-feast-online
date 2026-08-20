@@ -96,7 +96,7 @@ function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <ImagePlaceholder label="[RESTAURANT INTERIOR IMAGE]" aspect="aspect-[5/4]" />
+            <ImagePlaceholder src="/image5.png" label="" aspect="aspect-[5/4]" />
           </Reveal>
         </div>
       </Section>
@@ -104,9 +104,10 @@ function AboutPage() {
       <Section tone="ivory">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
           <Reveal className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-            <ImagePlaceholder label="[SPICE MASALA IMAGE]" aspect="aspect-[3/4]" />
+            <ImagePlaceholder src="/image6.png" label="" aspect="aspect-[3/4]" />
             <ImagePlaceholder
-              label="[TRADITIONAL COOKING IMAGE]"
+            src="/image7.png"
+              label=""
               aspect="aspect-[3/4]"
               steam
               className="mt-8"
@@ -182,7 +183,7 @@ function AboutPage() {
             </ActionLink>
           </Reveal>
           <Reveal delay={100}>
-            <ImagePlaceholder label="[FAMILY DINING IMAGE]" aspect="aspect-[4/3]" />
+            <ImagePlaceholder src="/image8.png" label="" aspect="aspect-[4/3]" />
           </Reveal>
         </div>
       </Section>
