@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
 
 function NotFoundComponent() {
   return (
@@ -77,14 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Manpaanai Chettinadu Virundhu | Chettinad Restaurant in Vandalur" },
+      {
+        name: "description",
+        content:
+          "Authentic Chettinad and South Indian cuisine at Manpaanai Chettinadu Virundhu, GST Road, Vandalur, Chennai.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Manpaanai Chettinadu Virundhu" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "theme-color", content: "#7a3521" },
     ],
     links: [
       {
@@ -92,6 +97,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..600&family=Manrope:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Manpaanai Chettinadu Virundhu",
+          description:
+            "Restaurant serving authentic Chettinad and South Indian cuisine in Vandalur, Chennai.",
+          servesCuisine: ["Chettinad", "South Indian", "Indian"],
+          priceRange: "₹₹",
+          telephone: "+91 70949 88889",
+          url: "/",
+          hasMenu: "/menu",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "133, Grand Southern Trunk Road, Opposite to Zoo, Otteri",
+            addressLocality: "Vandalur, Chennai",
+            addressRegion: "Tamil Nadu",
+            postalCode: "600048",
+            addressCountry: "IN",
+          },
+          areaServed: ["Vandalur", "Chennai"],
+          openingHours: ["[ADD VERIFIED OPENING HOURS]"],
+          sameAs: [
+            "ADD_GOOGLE_BUSINESS_PROFILE_URL",
+            "ADD_INSTAGRAM_URL",
+            "ADD_FACEBOOK_URL",
+            "ADD_ZOMATO_URL",
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +163,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Navbar />
+      <main id="main">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <Footer />
     </QueryClientProvider>
   );
 }
